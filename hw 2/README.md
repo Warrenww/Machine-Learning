@@ -1,14 +1,11 @@
 # Homework 2
 
-Course: 💡ML
-Dates: Mar 30, 2020 → Apr 06, 2020
-Done: Yes
-Remain: -29 days
-Type: 📌 Assignment
+Course: 💡ML\
+Dates: Mar 30, 2020 → Apr 06, 2020\
+Done: Yes\
+Remain: -29 days\
+Type: 📌 Assignment\
 
-[108-2 ML_HW02.pdf](Homework%202/108-2_ML_HW02.pdf)
-
-**Table of content**
 
 # Naive Bayes Classifier
 
@@ -24,10 +21,6 @@ Create a Naive Bayes classifier for each handwritten digit that support discrete
     - 0: discrete mode
     - 1: continuous mode
 
-[Image data format](https://www.notion.so/93ddfcabd035413697954aa760eac53b)
-
-[Label data format](https://www.notion.so/99b6cbed3725469b9c9831bc0ac6ea12)
-
 ## Output
 
 1. Print out the the posterior (in log scale to avoid underflow) of the ten categories (0-9) for each image in INPUT 3. Don't forget to marginalize them so sum it up will equal to 1
@@ -40,7 +33,7 @@ Create a Naive Bayes classifier for each handwritten digit that support discrete
 ## Function
 
 - Discrete mode
-Tally the frequency of the values of each pixel into 32 bins each bin cross 8 gray level. Then perform Naive Bayes classifier. 
+Tally the frequency of the values of each pixel into 32 bins each bin cross 8 gray level. Then perform Naive Bayes classifier.
 To avoid empty bin, you can use a pesudocount (such as the minimum value in other bins) for instead.
 - Continuous mode
 Use MLE to fit a Gaussian distribution for the value of each pixel. Perform Naive Bayes classifier.
@@ -77,7 +70,7 @@ plt.imshow(img, cmap='gray')
 plt.show()
 ```
 
-$$P(C|x) = {P(x|C)P(C)\over P(x)}$$
+![$$P(C|x) = {P(x|C)P(C)\over P(x)}$$](http://www.sciweavers.org/upload/Tex2Img_1588067637/render.png)
 
 x is the vector formatted by image with 784 slots each could be 0...255
 
@@ -85,9 +78,9 @@ C is the digit
 
 P(C|x) is the posterior means the probability that the class is C given the data x
 
-P(x|C) is the likelihood means the probability that the data x belong to class C 
+P(x|C) is the likelihood means the probability that the data x belong to class C
 
-$$C^*=argmax_CP(C|x)=argmax_c{P(x|C)P(C)\over P(x)}$$
+![$$C^*=argmax_CP(C|x)=argmax_c{P(x|C)P(C)\over P(x)}$$](http://www.sciweavers.org/upload/Tex2Img_1588067771/render.png)
 
 P(x) is a constant and can be ignored
 
@@ -114,7 +107,7 @@ priors = [prior(i) for i in range(10)]
 
 For Gaussian case
 
-$$P(x|C)=\prod_{i=1}^{784}{1\over \sqrt{2\pi\sigma_i^2}}exp(-{(x_i-\mu_i)^2\over 2\sigma_i^2})$$
+![$$P(x|C)=\prod_{i=1}^{784}{1\over \sqrt{2\pi\sigma_i^2}}exp(-{(x_i-\mu_i)^2\over 2\sigma_i^2})$$](http://www.sciweavers.org/upload/Tex2Img_1588067836/render.png)
 
 # Online Learning
 
@@ -130,7 +123,7 @@ a, b are the parameters for the initial beta prior
 
 ## Output
 
-Print out the 
+Print out the
 
 - Binomial likelihood (based on MLE, of course),
 - Beta prior
